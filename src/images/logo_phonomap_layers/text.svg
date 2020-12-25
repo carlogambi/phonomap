@@ -1,0 +1,26 @@
+<svg version="1.1" id="Livello_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 281 268" style="enable-background:new 0 0 281 268;" xml:space="preserve">
+    <style type="text/css">
+	.st0{fill:#FF0080;}
+    </style>
+    <g>
+        <path class="st0" d="M86.96,26.98v32.95c0,0,21.96,0,21.96-16.47S86.96,26.98,86.96,26.98z"/>
+        <rect x="65" y="59.93" class="st0" width="21.96" height="21.96"/>
+        <rect x="119.91" y="59.93" class="st0" width="21.96" height="21.96"/>
+        <rect x="141.87" y="37.96" class="st0" width="21.96" height="21.96"/>
+        <rect x="119.91" y="16" class="st0" width="21.96" height="21.96"/>
+        <rect x="163.84" y="59.93" class="st0" width="21.96" height="21.96"/>
+        <circle class="st0" cx="218.75" cy="48.95" r="21.96"/>
+        <rect x="97.95" y="111.06" class="st0" width="21.96" height="43.93"/>
+        <rect x="141.87" y="122.04" class="st0" width="21.96" height="32.95"/>
+        <path class="st0" d="M119.91,111.06l21.96,10.98c0,0,10.98-10.98,0-21.96S119.91,111.06,119.91,111.06z"/>
+        <circle class="st0" cx="196.78" cy="122.04" r="21.96"/>
+        <rect x="65" y="191.71" class="st0" width="21.96" height="43.93"/>
+        <rect x="108.93" y="191.71" class="st0" width="21.96" height="43.93"/>
+        <polygon class="st0" points="75.98,169.75 119.91,169.75 97.95,191.71 	"/>
+        <polygon class="st0" points="141.87,224.65 185.8,224.65 163.84,191.71 	"/>
+        <path class="st0" d="M218.75,180.73v32.95c0,0,21.96,0,21.96-16.47S218.75,180.73,218.75,180.73z"/>
+        <rect x="196.78" y="213.67" class="st0" width="21.96" height="21.96"/>
+    </g>
+</svg>

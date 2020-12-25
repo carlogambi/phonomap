@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap');
+
+html {
+  all: unset;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    to: 1;
+  }
+}
+body {
+  /* animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out; */
+  background-color: purple;
+  margin: 0px;
+  font-family: 'Recursive', monospace;
+}
+.leaflet-popup-content-wrapper {
+  padding: 1px;
+  text-align: left;
+  border-radius: 0px;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: rgb(255, 0, 149);
+  color: #333;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+  border-radius: 9px;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+  color: #66ea95;
+  background-color: #71227c00;
+  margin: 5px;
+  border: solid 1px #66ea943b;
+  border-radius: 19px;
+  font-size: 15pt;
+  font-weight: 800;
+  padding: 2px;
+  backdrop-filter: blur(12px) brightness(1.4);
+}
+
+.leaflet-touch .leaflet-bar a:last-child {
+  color: #66ea95;
+  background-color: #71227c00;
+  margin: 5px;
+  border: solid 1px #66ea943b;
+  border-radius: 19px;
+  font-size: 15pt;
+  font-weight: 800;
+  padding: 2px;
+  backdrop-filter: blur(12px) brightness(1.4);
+}
+
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+  border: unset;
+  border-radius: 8px;
+}
+
+.leaflet-popup-tip-container {
+  visibility: hidden;
+}
+
+.leaflet-popup-tip-container {
+  color: black;
+}
+
+.leaflet-popup-content {
+  width: 52px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+  padding-right: 19px;
+  padding-top: 6px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 4px 0 0;
+  border: none;
+  text-align: center;
+  width: 18px;
+  height: 14px;
+  font: 16px/14px Tahoma, Verdana, sans-serif;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  background: transparent;
+}
+
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+  -ms-touch-action: none;
+  touch-action: none;
+  background-color: #501958;
+}
+
+.leaflet-marker-icon {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+#logo-phonomap {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}

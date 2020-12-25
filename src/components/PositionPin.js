@@ -1,11 +1,10 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React from 'react'
 import { Marker, Popup } from 'react-leaflet'
 import changeLocationEvent from '../custom-events/changeLocation'
-import initAnimationManager from '../custom-events/initAnimationStep'
 import customIcons from './customIcons'
 
 const PositionPin = ({position, info, onClick}) => {
-    const [isOver, setIsOver] = useState(false)
+    // const [isOver, setIsOver] = useState(false)
 
     return (
         <Marker 
@@ -18,8 +17,8 @@ const PositionPin = ({position, info, onClick}) => {
                     })
                     onClick()
                 },
-                mouseover: () => setIsOver(true),
-                mouseout: () => setIsOver(false),
+                // mouseover: () => setIsOver(true),
+                // mouseout: () => setIsOver(false),
             }}
         >
         <Popup>

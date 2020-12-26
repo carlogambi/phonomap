@@ -6,10 +6,14 @@ import AuthorSearch from './AuthorSearch'
 import ContentInfoContainer from './ContentInfoContainer'
 import positionQuery from '../custom-events/positionsQuery'
 import logoClickedEvent from '../custom-events/logoClicked'
+import deviceDetector from '../utils/device-detector'
+
+const currentDevice = deviceDetector()
+
 
 let containerStyle = {
     position: 'absolute',
-    width: '30%',
+    width: currentDevice === 'desktop' ? '30%' : currentDevice === 'tablet'? '70%': '100%',
     zIndex: 4,
     top: '10px', bottom: '10px', 
     borderRadius: '100px',
@@ -54,7 +58,7 @@ const slideButtonStyle = {
 }
 
 const slidedButtonPosition = {
-    right: '28%',
+    right: currentDevice === 'desktop' ? '28%' : currentDevice === 'tablet' ? '70%':'88%',
     transform: 'rotate(0deg)',
     transition: 'right 1s, transform 1s'
 }
@@ -118,9 +122,13 @@ const PhonoContainer = ({authorList}) => {
     }
     return (<>
             <SlideButton slided={slided} setSlided={(p) => setSlided(p)} />
-            <div style={style} className='phono-container' >
+            <div 
+                style={style} 
+                className='phono-container' 
+                onClick={() => (currentDevice === 'mobile' || currentDevice === 'tablet') && setSlided(!slided) }
+            >
                 <Borderlayer/>
-                <div style={contentContainerStyle}>
+                <div className='scroller' style={contentContainerStyle}>
                     {currentContent && <ContentInfoContainer positionData={currentContent} />}
                     {/* {currentContent && JSON.stringify(currentContent.detail.img)} */}
                     <AuthorSearch authorList={authorList} />

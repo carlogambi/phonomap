@@ -1,7 +1,7 @@
 import customEventDispatcher from "../utils/customEventDispatcher" 
 
 const stepDuration = 500 //millisecondi
-const stepsNumber = 3
+const stepsNumber = 4
 let currentStep = 0
 const stop = () => clearInterval(step)
 

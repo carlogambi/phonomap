@@ -78,11 +78,11 @@ const BGmap = ({animationSteps, positions}) => {
         
       >
       <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        attribution={` © <a href="http://osm.org/copyright" target='blank'>OpenStreetMap</a> contributors, style provided by <a href="https://www.mapbox.com/" title="Design beautiful maps with Mapbox Studio" target='blank'>MapBox</a>`}
         url="https://api.mapbox.com/styles/v1/carlogambi/ckik79l240odl17pa6o8cuktl/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiY2FybG9nYW1iaSIsImEiOiJja2lrN3F2dG4wN2E5MnJtOHhlZHU3aHk0In0.l-AM3bDCVCwseZzgupdZPA"
       />
       <ZoomControl />
-      {(animationSteps.currentStep === 3) && buildPositionList()}
+      {(animationSteps.currentStep === 4) && buildPositionList()}
     </MapContainer>
   )
 }

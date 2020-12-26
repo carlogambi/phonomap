@@ -6,13 +6,15 @@ import initAnimationManager from  './custom-events/initAnimationStep'
 import positionQuery from './custom-events/positionsQuery'
 import exampleDataPositions from './utils/example-data.json'
 
-
+//animazione logo
+const transitionTime = 0.7
+const timingFunction = 'cubic-bezier(1, 0.01, 0.22, 0.95)'
 const logoStyle = {
   width: '150px',
   position: 'absolute',
   left: '50%',
   top: '88%',
-  transition: 'left 1s ease-in-out, top 1s ease-in-out, width 1s ease-in-out'
+  transition: `left ${transitionTime}s ${timingFunction}, top ${transitionTime}s ${timingFunction}, width ${transitionTime}s ${timingFunction}`
 }
 
 const initLogoStyle = {
@@ -49,7 +51,7 @@ const App = () => {
       </div>}
       {animationSteps.currentStep >= 0 && 
         <LogoPhonomap 
-            style={(animationSteps.currentStep >= 3 )?logoStyle:initLogoStyle} 
+            style={(animationSteps.currentStep >= 2 )?logoStyle:initLogoStyle} 
             showInfo={false} 
             setDeviation={(prev) => prev}
         />

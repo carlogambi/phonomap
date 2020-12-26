@@ -20,3 +20,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000;
 }
+
+.scroller {
+  scrollbar-color: #35123a #80008000;
+  scrollbar-width: thin;
+}

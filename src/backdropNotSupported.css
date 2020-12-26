@@ -1,0 +1,10 @@
+@supports not (-webkit-backdrop-filter: blur(2em)) {
+  .phono-container {
+    background-color: #5019585c;
+  }
+}
+@supports not (backdrop-filter: blur(2em)) {
+  .phono-container {
+    -webkit-backdrop-filter: blur(2em);
+  }
+}

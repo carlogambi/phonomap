@@ -112,6 +112,6 @@ body {
 
 #logo-phonomap {
   animation-name: fadeIn;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
 }

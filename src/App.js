@@ -23,7 +23,15 @@ const initLogoStyle = {
   left: '50%',
   top: '50%',
 }
-
+true && alert(`
+!*!-SITO ANCORA IN FASE DI SVILUPPO-!*!
+    Per una corretta visualizzazione 
+    aprire questa pagina
+    SOLO con GOOGLE CHROME.
+    working on:
+     - animazioni onload
+     - ottimizzazione svg/immagini
+`)
 const App = () => {
   const [animationSteps, setAnimationSteps] = useState({})
   const [positions, setPositions] = useState(exampleDataPositions)
@@ -46,8 +54,10 @@ const App = () => {
     })
   }, [animationSteps, positions])
   return (<>
-      {false && <div style={{position:'absolute',zIndex:100,top:'10px',left:'50px', backgroundColor:'yellow', padding:'10px',fontFamily:'sans-serif'}}>
-        {animationSteps.currentStep}/{animationSteps.stepsNumber}
+      {true && animationSteps.currentStep !== 6 && <div style={{borderRadius: '10px', position:'absolute',zIndex:100,top:'15px',left:'70px', backgroundColor:'yellow', padding:'10px',fontFamily:'sans-serif'}}>
+        <h5>
+        {animationSteps.currentStep} / {animationSteps.stepsNumber}
+        </h5>
       </div>}
       {animationSteps.currentStep >= 0 && 
         <LogoPhonomap 

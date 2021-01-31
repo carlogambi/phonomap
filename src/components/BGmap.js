@@ -82,7 +82,7 @@ const BGmap = ({animationSteps, positions}) => {
         url="https://api.mapbox.com/styles/v1/carlogambi/ckik79l240odl17pa6o8cuktl/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiY2FybG9nYW1iaSIsImEiOiJja2lrN3F2dG4wN2E5MnJtOHhlZHU3aHk0In0.l-AM3bDCVCwseZzgupdZPA"
       />
       <ZoomControl />
-      {(animationSteps.currentStep === 4) && buildPositionList()}
+      {(animationSteps.currentStep > 4) && buildPositionList()}
     </MapContainer>
   )
 }

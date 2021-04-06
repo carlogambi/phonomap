@@ -5,6 +5,7 @@ import PhonoContainer from './components/PhonoContainer';
 import initAnimationManager from './custom-events/initAnimationStep';
 import positionQuery from './custom-events/positionsQuery';
 import exampleDataPositions from './utils/example-data.json';
+const enableAnimationSteps = false;
 
 //animazione logo
 const transitionTime = 0.7;
@@ -60,7 +61,7 @@ const App = () => {
   }, [animationSteps, positions]);
   return (
     <>
-      {true && animationSteps.currentStep !== 6 && (
+      {enableAnimationSteps && animationSteps.currentStep !== 6 && (
         <div
           style={{
             borderRadius: '10px',

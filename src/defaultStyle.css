@@ -74,7 +74,7 @@ body {
 }
 
 .leaflet-popup-content {
-  width: 52px;
+  width: fit-content;
   font-weight: 600;
   text-transform: uppercase;
   color: black;
@@ -114,4 +114,8 @@ body {
   animation-name: fadeIn;
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
+}
+
+.leaflet-popup-content {
+  width: fit-content;
 }

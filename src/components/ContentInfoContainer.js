@@ -19,7 +19,9 @@ const aStyle = {
 const ContentInfoContainer = ({ positionData }) => {
   return (
     <div style={containerStyle}>
-      <h1>{positionData.info.title.toUpperCase().replace(/"/gm, '')}</h1>
+      <h1 style={{ paddingRight: '15px' }}>
+        {positionData.info.title.toUpperCase().replace(/"/gm, '')}
+      </h1>
       <h5 style={{ fontSize: '22px', margin: '0px' }}>
         <small>Author:</small> <strong>{positionData.info.author}</strong>
       </h5>

@@ -23,7 +23,7 @@ const PositionPin = ({ position, info, onClick }) => {
     >
       <Popup>
         <div>
-          <p style={{ wordBreak: 'break-all' }}>
+          <p /* style={{ wordBreak: 'break-all' }} */>
             {info.title.replace(/"/gm, '')}
           </p>
         </div>

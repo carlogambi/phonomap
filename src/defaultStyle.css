@@ -116,6 +116,3 @@ body {
   animation-timing-function: ease-in-out;
 }
 
-.leaflet-popup-content {
-  width: fit-content;
-}

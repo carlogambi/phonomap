@@ -19,6 +19,7 @@ let containerStyle = {
       ? '70%'
       : '100%',
   zIndex: 4,
+  minWidth: '400px',
   top: '10px',
   bottom: '10px',
   borderRadius: '100px',
@@ -69,7 +70,7 @@ const slideButtonStyle = {
 const slidedButtonPosition = {
   right:
     currentDevice === 'desktop'
-      ? '28%'
+      ? '20px'
       : currentDevice === 'tablet'
       ? '70%'
       : '88%',
@@ -78,7 +79,7 @@ const slidedButtonPosition = {
 };
 
 const notSlidedButtonPosition = {
-  right: '1%',
+  right: '5px',
   transform: 'rotate(180deg)',
   transition: 'right 1s, transform 1s',
 };

@@ -78,8 +78,11 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   color: black;
-  padding-right: 19px;
-  padding-top: 6px;
+  /* padding-right: 19px; */
+  /* padding-top: 6px; */
+}
+.leaflet-popup-content p {
+  margin: 0px;
 }
 
 .leaflet-container a.leaflet-popup-close-button {
@@ -115,4 +118,3 @@ body {
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
 }
-

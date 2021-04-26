@@ -5,7 +5,7 @@ import PhonoContainer from './components/PhonoContainer';
 import initAnimationManager from './custom-events/initAnimationStep';
 import positionQuery from './custom-events/positionsQuery';
 import exampleDataPositions from './utils/example-data.json';
-const enableAnimationSteps = false;
+const enableAnimationSteps = true;
 
 //animazione logo
 const transitionTime = 0.7;

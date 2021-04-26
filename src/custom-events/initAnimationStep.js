@@ -13,7 +13,7 @@ const step = setInterval(() => {
   if (stepsNumber < currentStep) {
     stop();
   }
-  if (currentStep == 1) debugger;
+  // if (currentStep === 1) debugger;
 }, stepDuration);
 
 const initAnimationManager = {

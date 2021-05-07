@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import BGmap from './components/BGmap';
 import LogoPhonomap from './components/LogoPhonomap';
 import PhonoContainer from './components/PhonoContainer';
+import PopUp from './components/PopUp';
 import initAnimationManager from './custom-events/initAnimationStep';
+import logoClickedEvent from './custom-events/logoClicked';
 import positionQuery from './custom-events/positionsQuery';
 import exampleDataPositions from './utils/example-data.json';
 const enableAnimationSteps = false;
@@ -38,6 +40,9 @@ const App = () => {
   const [animationSteps, setAnimationSteps] = useState({});
   const [positions, setPositions] = useState(exampleDataPositions);
   const authorList = [...new Set(positions.map((p) => p.author))];
+  const [slided, setSlided] = useState(false);
+
+  logoClickedEvent.intercept(() => setSlided(!slided));
   useEffect(() => {
     initAnimationManager.interceptInitAnimation(
       (e) => e !== animationSteps && setAnimationSteps(e)
@@ -61,6 +66,7 @@ const App = () => {
   }, [animationSteps, positions]);
   return (
     <>
+    
       {enableAnimationSteps && animationSteps.currentStep !== 6 && (
         <div
           style={{
@@ -88,7 +94,10 @@ const App = () => {
       )}
       <BGmap animationSteps={animationSteps} positions={positions} />
       {animationSteps.currentStep > 2 && (
+        <>
         <PhonoContainer authorList={authorList} />
+        <PopUp visibility={slided}/>
+        </>
       )}
     </>
   );

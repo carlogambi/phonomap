@@ -5,7 +5,7 @@ import { ReactComponent as ArrowSVG } from './../images/arrow-phonomap.svg';
 import AuthorSearch from './AuthorSearch';
 import ContentInfoContainer from './ContentInfoContainer';
 import positionQuery from '../custom-events/positionsQuery';
-import logoClickedEvent from '../custom-events/logoClicked';
+// import logoClickedEvent from '../custom-events/logoClicked';
 import deviceDetector from '../utils/device-detector';
 
 const currentDevice = deviceDetector();
@@ -23,6 +23,7 @@ let containerStyle = {
   top: '10px',
   bottom: '10px',
   borderRadius: '100px',
+  backgroundColor: 'rgba(255, 255, 255, 0.418)',
   backdropFilter: 'blur(11px) brightness(1.5)',
   boxShadow: 'rgb(27 29 32) 0px 15px 46px, rgb(0 0 0 / 2%) -9px -9px 16px',
 };
@@ -121,7 +122,7 @@ const PhonoContainer = ({ authorList }) => {
 
   useEffect(() => {
     elementPhonoContainer.current.scrollTo(0, 0);
-    logoClickedEvent.intercept(() => setSlided(!slided));
+    // logoClickedEvent.intercept(() => setSlided(!slided));
     positionQuery.intercept(() => setCurrentContent(undefined));
     changeLocationEvent.intercept((e) => {
       setSlided(true);

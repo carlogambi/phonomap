@@ -15,12 +15,12 @@ const PopUp = ({ visibility }) => {
         <div id='testoPopUp'>
           <p>COSA</p>
           <p>
-            Phonomap è un progetto di mappatura sonora del territorio italiano.
-            Una mappa dei luoghi e delle persone di questo tempo, un archivio
-            online libero, accessibile e aperto di tutti i suoni provenienti da
-            ogni angolo d’Italia. Ogni suono è a disposizione di chiunque lo
-            voglia usare, scaricabile e gratuito attraverso la licenza Creative
-            Commons sul profilo Soundcloud di Forevergreen.fm dall’apposita{' '}
+            Phonomap è una mappatura sonora del territorio italiano. Racconta un
+            arco temporale esteso attraverso il punto di vista e di ascolto
+            delle persone. Chiunque può contribuire, anche tu. Ogni suono
+            raccolto è a disposizione di chiunque lo voglia ascoltare ed
+            utilizzare. È scaricabile gratuitamente dal profilo Soundcloud di
+            Forevergreen.fm all’apposita{' '}
             <a
               target='blank'
               href='https://soundcloud.com/forevergreenrec/sets/phonomap'
@@ -31,12 +31,17 @@ const PopUp = ({ visibility }) => {
             .{' '}
           </p>
           <br />
-          <p>COME</p>
+          <p>COME PARTECIPARE</p>
           <p>
             Puoi partecipare utilizzando semplicemente il tuo smartphone
-            attraverso un’app di registrazione audio. Se sei in possesso di uno
-            strumento più professionale, libera la tecnica! Una volta registrato
-            puoi inviare il tuo suono tramite{' '}
+            attraverso un’app di registrazione audio. Se sei però in possesso di
+            uno strumento più professionale, sentiti liber* di utilizzarlo! Ti
+            chiediamo inoltre: <br />
+            - una fotografia del punto in cui effettui la registrazione <br />
+            - una descrizione del suono <br />
+            - il tuo nome o nickname
+            <br />
+            Quì trovi tutte le informazioni necessarie:.
             <a
               target='blank'
               href='https://docs.google.com/forms/d/e/1FAIpQLSe5oyK8wYeNC5HiKL3HXbsFxopf5UuFi2rP9xd3JM4nRgI75w/viewform'

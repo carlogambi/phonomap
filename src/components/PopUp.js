@@ -115,7 +115,7 @@ const PopUp = ({ visibility }) => {
             </p>
             <p>
               Lo sviluppo di questa mappa è stato possibile grazie al lavoro
-              dell'artista multiform{' '}
+              dell'artista multiforme{' '}
               <a
                 target='blank'
                 href='http://formeuniche.org/author/carlo-gambirasio/'

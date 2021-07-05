@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 
 const imgStyle = {
@@ -17,6 +17,19 @@ const aStyle = {
   textAlign: 'right',
 };
 const ContentInfoContainer = ({ positionData }) => {
+  const [image, setImage] = useState(null);
+  useEffect(() => {
+    (async () => {
+      const req = await fetch(
+        'http://localhost:3000/get/phonomap_image?id=' + positionData.info.id,
+        {
+          method: 'GET',
+        }
+      );
+      const img = await req.text();
+      setImage(img);
+    })();
+  }, []);
   return (
     <div style={containerStyle}>
       <h1 style={{ paddingRight: '15px' }}>
@@ -28,7 +41,7 @@ const ContentInfoContainer = ({ positionData }) => {
       <h3>
         {positionData.position[0]}, {positionData.position[0]}
       </h3>
-      <img style={imgStyle} src={positionData.info.img} alt='position' />
+      {image && <img style={imgStyle} src={image} alt='position' />}
       <p>{positionData.info.description}</p>
       {positionData.info.sounds.map((s, i) => (
         <React.Fragment key={i}>

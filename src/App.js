@@ -3,6 +3,7 @@ import BGmap from './components/BGmap';
 import LogoPhonomap from './components/LogoPhonomap';
 import PhonoContainer from './components/PhonoContainer';
 import PopUp from './components/PopUp';
+import { phonomap_server_url, timingFunction, transitionTime } from './config';
 import initAnimationManager from './custom-events/initAnimationStep';
 import logoClickedEvent from './custom-events/logoClicked';
 import positionQuery from './custom-events/positionsQuery';
@@ -10,8 +11,7 @@ import exampleDataPositions from './utils/example-data.json';
 const enableAnimationSteps = false;
 
 //animazione logo
-const transitionTime = 0.7;
-const timingFunction = 'cubic-bezier(1, 0.01, 0.22, 0.95)';
+
 const logoStyle = {
   width: '150px',
   position: 'absolute',
@@ -46,7 +46,7 @@ const App = () => {
   useEffect(() => {
     (async () => {
       const req = await fetch(
-        'http://localhost:3000/get/phonomap_positions_pack',
+        phonomap_server_url + '/get/phonomap_positions_pack',
         {
           method: 'GET',
         }

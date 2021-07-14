@@ -26,7 +26,7 @@ const initLogoStyle = {
   left: '50%',
   top: '50%',
 };
-false &&
+true &&
   alert(`
 !*!-SITO ANCORA IN FASE DI SVILUPPO-!*!
     Per una corretta visualizzazione 

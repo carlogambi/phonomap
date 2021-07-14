@@ -49,6 +49,7 @@ const App = () => {
         phonomap_server_url + '/get/phonomap_positions_pack',
         {
           method: 'GET',
+          mode: 'cors',
         }
       );
       const list = await req.json();

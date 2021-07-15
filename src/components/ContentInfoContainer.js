@@ -11,6 +11,8 @@ const Container = styled.div`
   text-align: right;
   border-bottom: solid 4px #4a1a51;
   padding-bottom: 50px;
+  opacity: ${({ loaded }) => (loaded ? '1' : '0')};
+  transition: opacity 2;
 `;
 
 const SoundCloudLink = styled.a`
@@ -42,7 +44,7 @@ const ContentInfoContainer = ({ positionData }) => {
     })();
   }, [positionData.info.id]);
   return (
-    <Container>
+    <Container loaded={!!image}>
       <PositionTitle>
         {positionData.info.title.toUpperCase().replace(/"/gm, '')}
       </PositionTitle>

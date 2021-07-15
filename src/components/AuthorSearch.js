@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import positionQuery from '../custom-events/positionsQuery';
+import styled from 'styled-components';
 
-const authorsContainerStyle = {
-  border: 'solid 4px #4a1a51',
-  padding: '6px',
-  borderRadius: '9px',
-  marginRight: '30px',
-  marginLeft: '30px',
-};
+const AuthorsContainer = styled.div`
+  border: solid 4px #4a1a51;
+  padding: 6px;
+  border-radius: 9px;
+  margin-right: 30px;
+  margin-left: 30px;
+`;
 
 /* Monospace: Sans (natural-width) or Mono (fixed-width) */
 /* Casual: Linear to Casual */
@@ -16,6 +17,7 @@ const authorsContainerStyle = {
 /* Cursive: always roman, auto substitution, or always cursive */
 const genFontSettings = ({ mono, casl, wght, slnt, CRSV }) =>
   `'MONO'${mono}, 'CASL' ${casl}, 'wght' ${wght}, 'slnt' ${slnt}, 'CRSV' ${CRSV}`;
+
 const common = {
   cursor: 'pointer',
 };
@@ -74,7 +76,7 @@ const AuthorSearch = ({ authorList }) => {
   return (
     <div>
       <h3 style={{ textAlign: 'center' }}>Search/{currentSelectedAuthor}</h3>
-      <div style={authorsContainerStyle}>
+      <AuthorsContainer>
         {authorList &&
           authorList.map((a, i) => (
             <AuthorButton
@@ -83,7 +85,7 @@ const AuthorSearch = ({ authorList }) => {
               onClick={(a) => setCurrentSelectedAuthor(a)}
             />
           ))}
-      </div>
+      </AuthorsContainer>
     </div>
   );
 };

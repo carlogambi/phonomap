@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import BGmap from './components/BGmap';
 import LogoPhonomap from './components/LogoPhonomap';
 import PhonoContainer from './components/PhonoContainer';
 import PopUp from './components/PopUp';
+import { phonomap_server_url, timingFunction, transitionTime } from './config';
 import initAnimationManager from './custom-events/initAnimationStep';
 import logoClickedEvent from './custom-events/logoClicked';
 import positionQuery from './custom-events/positionsQuery';
@@ -10,8 +11,7 @@ import exampleDataPositions from './utils/example-data.json';
 const enableAnimationSteps = false;
 
 //animazione logo
-const transitionTime = 0.7;
-const timingFunction = 'cubic-bezier(1, 0.01, 0.22, 0.95)';
+
 const logoStyle = {
   width: '150px',
   position: 'absolute',
@@ -38,11 +38,25 @@ false &&
 `);
 const App = () => {
   const [animationSteps, setAnimationSteps] = useState({});
-  const [positions, setPositions] = useState(exampleDataPositions);
-  const authorList = [...new Set(positions.map((p) => p.author))];
+  const [positions, setPositions] = useState([]);
+  const authorList = useRef(null);
   const [slided, setSlided] = useState(false);
 
   logoClickedEvent.intercept(() => setSlided(!slided));
+  useEffect(() => {
+    (async () => {
+      const req = await fetch(
+        phonomap_server_url + '/get/phonomap_positions_pack',
+        {
+          method: 'GET',
+          mode: 'cors',
+        }
+      );
+      const list = await req.json();
+      setPositions(list);
+      authorList.current = [...new Set(list.map((p) => p.author))];
+    })();
+  }, []);
   useEffect(() => {
     initAnimationManager.interceptInitAnimation(
       (e) => e !== animationSteps && setAnimationSteps(e)
@@ -66,7 +80,6 @@ const App = () => {
   }, [animationSteps, positions]);
   return (
     <>
-    
       {enableAnimationSteps && animationSteps.currentStep !== 6 && (
         <div
           style={{
@@ -92,11 +105,15 @@ const App = () => {
           setDeviation={(prev) => prev}
         />
       )}
-      <BGmap animationSteps={animationSteps} positions={positions} />
-      {animationSteps.currentStep > 2 && (
+      {positions.length !== 0 && authorList.length !== 0 && (
         <>
-        <PhonoContainer authorList={authorList} />
-        <PopUp visibility={slided}/>
+          <BGmap animationSteps={animationSteps} positions={positions} />
+          {animationSteps.currentStep > 2 && (
+            <>
+              <PhonoContainer authorList={authorList.current} />
+              <PopUp visibility={slided} />
+            </>
+          )}
         </>
       )}
     </>

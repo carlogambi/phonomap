@@ -38,6 +38,7 @@ false &&
 `);
 const App = () => {
   const [animationSteps, setAnimationSteps] = useState({});
+  const [fetchedPositions, setFetchedPositions] = useState([])
   const [positions, setPositions] = useState([]);
   const authorList = useRef(null);
   const [slided, setSlided] = useState(false);
@@ -53,6 +54,7 @@ const App = () => {
         }
       );
       const list = await req.json();
+      setFetchedPositions(list)
       setPositions(list);
       authorList.current = [...new Set(list.map((p) => p.author))];
     })();
@@ -65,9 +67,9 @@ const App = () => {
       switch (e.detail.field) {
         case 'author':
           if (e.detail.query === 'ALL AUTHORS') {
-            setPositions(exampleDataPositions);
+            setPositions(fetchedPositions);
           } else {
-            const filtered = exampleDataPositions.filter(
+            const filtered = fetchedPositions.filter(
               (p) => p.author === e.detail.query
             );
             setPositions(filtered);
@@ -77,7 +79,7 @@ const App = () => {
           break;
       }
     });
-  }, [animationSteps, positions]);
+  }, [animationSteps, fetchedPositions, positions]);
   return (
     <>
       {enableAnimationSteps && animationSteps.currentStep !== 6 && (
@@ -105,7 +107,8 @@ const App = () => {
           setDeviation={(prev) => prev}
         />
       )}
-      {positions.length !== 0 && authorList.length !== 0 && (
+      {/* {positions.length !== 0 && authorList.length !== 0 && ( */}
+      {authorList.length !== 0 && (
         <>
           <BGmap animationSteps={animationSteps} positions={positions} />
           {animationSteps.currentStep > 2 && (

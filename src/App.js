@@ -10,6 +10,8 @@ import positionQuery from './custom-events/positionsQuery';
 import exampleDataPositions from './utils/example-data.json';
 const enableAnimationSteps = false;
 
+console.log('version 1.0.0');
+
 //animazione logo
 
 const logoStyle = {

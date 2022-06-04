@@ -45,15 +45,21 @@ const App = () => {
   logoClickedEvent.intercept(() => setSlided(!slided));
   useEffect(() => {
     (async () => {
-      const req = await fetch(
-        phonomap_server_url + '/get/phonomap_positions_pack',
-        {
-          method: 'GET',
-          mode: 'cors',
-        }
-      );
+      let req;
+      try {
+        req = await fetch(
+          phonomap_server_url + '/get/phonomap_positions_pack',
+          {
+            method: 'GET',
+            mode: 'cors',
+          }
+        );
+      } catch (err) {
+        window.location.reload();
+      }
       const list = await req.json();
       setPositions(list);
+      if (!authorList.current?.length) authorList.current = [];
       authorList.current = [...new Set(list.map((p) => p.author))];
     })();
   }, []);

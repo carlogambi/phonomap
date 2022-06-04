@@ -71,7 +71,7 @@ const AuthorSearch = ({ authorList }) => {
   const [currentSelectedAuthor, setCurrentSelectedAuthor] =
     useState('ALL AUTHORS');
 
-  if (!authorList?.includes('ALL AUTHORS'))
+  if (authorList && !authorList.includes('ALL AUTHORS'))
     authorList = ['ALL AUTHORS', ...authorList];
   return (
     <div>
